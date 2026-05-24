@@ -9,3 +9,10 @@ def add_soldier(soldier_id: int, name: str) -> None:
         raise ValueError("The name is not valid")
     soldiers.append({"id": soldier_id, "name": name, "duties": []})
   
+def remove_soldier(soldier_id: int) -> None:
+    soldier = find_soldier_by_id(soldier_id)
+    if soldier is None:
+        raise KeyError("The soldier does not exist in the system!")
+    soldiers.remove(soldier) 
+    
+    
