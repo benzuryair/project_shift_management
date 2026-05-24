@@ -14,7 +14,7 @@ def add_duty_to_soldier(soldier_id: int, duty_name: str, day: str) -> None:
 
 def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None:
     soldier = find_soldier_by_id(soldier_id)
-    if soldier == None:
+    if soldier is None:
         raise KeyError("The soldier does not exist in the system!")
     duty=find_duty_by_name(soldier["duties"],duty_name)
     if duty == None:
@@ -22,3 +22,9 @@ def update_duty_status(soldier_id: int, duty_name: str, new_status: str) -> None
     if not is_valid_status(new_status):
         raise ValueError("The duty status is incorrect!")
     duty["status"] = new_status
+
+def get_soldier_duties(soldier_id: int) -> list:
+    soldier = find_soldier_by_id(soldier_id)
+    if soldier is None:
+        raise KeyError("The soldier does not exist in the system!")
+    return soldier["duties"]
