@@ -35,4 +35,15 @@ def handle_add_soldier() -> None:
         except ValueError as e:
             print(e)
             continue
-        
+
+def handle_remove_soldier() -> None:
+        while True:
+            id = input("Enter the soldier id ")
+            try:
+                remove_soldier(id)
+                print("The soldier was successfully removed")
+                break
+            except KeyError as e:
+                print(e)
+                continue
+            
