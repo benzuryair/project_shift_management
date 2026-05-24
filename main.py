@@ -1,3 +1,6 @@
+from soldier_manager import *
+from duty_manager import *
+
 def show_menu() -> None:
     menu_text = """
 =========================================
@@ -20,3 +23,16 @@ def get_user_choice() -> str:
             print("Your selection is invalid. Please select between (1-6)")
         else:
             return choice
+
+def handle_add_soldier() -> None:
+    while True:
+        id = input("Enter the soldier id ")
+        name = input("Enter the soldier name ")
+        try:
+            add_soldier(id, name)
+            print("The soldier was successfully added")
+            break
+        except ValueError as e:
+            print(e)
+            continue
+        
