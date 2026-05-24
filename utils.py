@@ -26,3 +26,8 @@ def is_valid_name(name: str) -> bool:
 
 def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
     return duty_name in [duty["name"] for duty in soldier["duties"]]
+
+
+def is_valid_day(day: str) -> bool:
+    return day in ("sunday", "monday", "tuesday", "wednesday", "thursday")
+
