@@ -9,3 +9,8 @@ def find_soldier_by_id(soldier_id: int) -> dict | None:
     return None
 
 
+def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
+    for duty in duties:
+        if duty["name"] == duty_name:
+            return duty
+    return None
