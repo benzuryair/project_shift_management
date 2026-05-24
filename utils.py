@@ -19,3 +19,7 @@ def find_duty_by_name(duties: list, duty_name: str) -> dict | None:
 def is_valid_status(status: str) -> bool:
     return status in ("pending", "completed", "missed")
 
+
+def is_valid_name(name: str) -> bool:
+    return name .strip() != ""
+
