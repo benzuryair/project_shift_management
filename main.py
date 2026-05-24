@@ -78,3 +78,20 @@ def handle_add_duty() -> None:
             print(e)
             continue
     
+
+def handle_update_duty_status() -> None:
+    while True:
+        id = input("Enter the soldier id ")
+        name = input("Enter the duty name ")
+        status = input("Enter the new status ")
+        try:
+            update_duty_status(id, name, status)
+            print("The duty was successfully updated")
+            break
+        except KeyError as e:
+            print(e)
+            continue
+        except ValueError as e:
+            print(e)
+            continue
+         
