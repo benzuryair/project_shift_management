@@ -12,3 +12,11 @@ def show_menu() -> None:
 =========================================
 """
     print(menu_text)
+
+def get_user_choice() -> str:
+    while True:
+        choice = input("Please select an option (1-6): ")
+        if choice not in ("1","2","3","4","5","6"):
+            print("Your selection is invalid. Please select between (1-6)")
+        else:
+            return choice
