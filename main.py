@@ -60,6 +60,7 @@ def handle_view_soldiers() -> None:
                 print(f"  - {duty['name']} (Status: {duty['status']})")
         else:
             print("No duties assigned")
+        print("-" * 30)
 
 
 def handle_add_duty() -> None:
@@ -94,4 +95,15 @@ def handle_update_duty_status() -> None:
         except ValueError as e:
             print(e)
             continue
-         
+
+def handle_view_soldier_duties() -> None:
+    while True:
+        id = input("Enter the soldier id ")
+        try:
+           duties = get_soldier_duties(id)
+           for duty in duties:
+               print(f"  - {duty['name']} on {duty['day']} (Status: {duty['status']})")
+
+        except KeyError as e:
+            print(e)
+            continue
