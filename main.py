@@ -46,4 +46,17 @@ def handle_remove_soldier() -> None:
             except KeyError as e:
                 print(e)
                 continue
-            
+
+def handle_view_soldiers() -> None:
+    soldiers = get_all_soldiers()
+    if not soldiers:
+        print("There are no soldiers in the system")
+        return None
+    for soldier in soldiers:
+        print(f"ID: {soldier["id"]} | Name: {soldier["name"]}")
+        print("Duties")
+        if duty:
+            for duty in soldier["duties"]:
+                print(f"  - {duty['name']} (Status: {duty['status']})")
+        else:
+            print("No duties assigned")
