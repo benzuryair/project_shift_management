@@ -23,3 +23,6 @@ def is_valid_status(status: str) -> bool:
 def is_valid_name(name: str) -> bool:
     return name .strip() != ""
 
+
+def soldier_has_duty(soldier: dict, duty_name: str) -> bool:
+    return duty_name in [duty["name"] for duty in soldier["duties"]]
